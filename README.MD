@@ -86,12 +86,12 @@ kestrel-bay-health/
  
 | Check | Tool / method | Result |
 |---|---|---|
-| Automated scan | axe DevTools | TBD |
-| Automated scan | WAVE | TBD |
-| Lighthouse accessibility score | Chrome Lighthouse | TBD |
-| Keyboard-only navigation | Manual | TBD |
-| Screen reader | NVDA / VoiceOver | TBD |
-| 200% zoom and 320px reflow | Manual | TBD |
+| axe DevTools scan | axe-core 4.13.0 (WCAG 2.1 AA) | 0 issues (0 Critical, 0 Serious) |
+| Automated scan | WAVE (WebAIM) | 0 Errors, 0 Contrast Errors, 0 Alerts (AIM Score: 10/10) |
+| Lighthouse accessibility score | Chrome Lighthouse 13.5.0 (Desktop) | 100 / 100 (27 passed audits) |
+| Keyboard-only navigation | Manual (Tab / Shift+Tab / Enter) | Pass - skip link first, logical tab order, visible focus rings on all controls, no keyboard traps |
+| Screen reader | macOS VoiceOver (Safari / Chrome) | Pass — landmarks, H1–H3 outline, form labels, and live validation errors announced cleanly; decorative icons ignored |
+| 200% zoom and 320px reflow | Manual (Chrome 200% zoom & 320px viewport) | Pass — single-column reflow, mobile menu works, no clipped text or horizontal scroll |
  
 Full findings and fixes are documented on the [audit case study page](#).
  
