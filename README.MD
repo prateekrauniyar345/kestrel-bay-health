@@ -72,14 +72,37 @@ kestrel-bay-health/
 ├── index.html            Homepage
 ├── accessibility.html    Accessibility statement
 ├── audit.html            Before/after audit case study
+├── main.js               Form validation and mobile nav
 ├── css/
 │   ├── tokens.css        Design tokens from the Figma style tile
 │   └── styles.css        Layout and components
-├── js/
-│   └── main.js           Form validation and mobile nav
+├── assets/               Testing & demo artifacts
+│   ├── axe-report.png
+│   ├── axe-report-with-best-practices.png
+│   ├── wave-report-1.png
+│   ├── wave-report-2.png
+│   ├── lighthouse-report-with-best-practices.pdf
+│   ├── seo-accessibility-report.pdf
+│   └── kestrel-bay-demo-video.mov
 └── README.md
 ```
- 
+
+---
+
+## Assets & Testing Reports
+
+Accessibility testing and validation artifacts stored in the `assets/` folder:
+
+| File | Contents |
+|------|----------|
+| `axe-report.png` | axe DevTools accessibility scan results (baseline) |
+| `axe-report-with-best-practices.png` | axe DevTools scan with WCAG 2.1 AA best practices enabled |
+| `wave-report-1.png` | WAVE (WebAIM) accessibility test results — page 1 |
+| `wave-report-2.png` | WAVE (WebAIM) accessibility test results — page 2 |
+| `lighthouse-report-with-best-practices.pdf` | Chrome Lighthouse audit report (Accessibility, Performance, SEO, Best Practices) |
+| `seo-accessibility-report.pdf` | Combined SEO and accessibility audit documentation |
+| `kestrel-bay-demo-video.mov` | Recorded demonstration of the Kestrel Bay Health homepage (responsive design, navigation, form validation) |
+
 ---
  
 ## Accessibility testing
