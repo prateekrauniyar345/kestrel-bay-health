@@ -9,9 +9,9 @@ Figma design.
 > **Note:** Kestrel Bay Health is a fictional organization created as a portfolio demo. Names, addresses, and phone numbers are not real.
 
 
-**Live site:** 
+**Live site:** [Kestrel Bay Health](https://prateekrauniyar345.github.io/kestrel-bay-health/)
 <br>
-**Figma design:** 
+**Figma design:** [Figma Design](https://www.figma.com/design/a0Nw4BHJpBFWdvNMeZsjjz/Kestrel-Bay-Health?node-id=0-1&t=UwiVwraO83f5xMqV-1)
  
 ---
  
