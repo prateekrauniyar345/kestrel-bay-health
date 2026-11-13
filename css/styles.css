@@ -60,3 +60,618 @@ ol {
   margin: 0;
   padding: 0;
 }
+
+/* Links are underlined so they never rely on color alone (WCAG 1.4.1) */
+a {
+  color: var(--color-primary-teal);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+ 
+a:hover {
+  text-decoration-thickness: 2px;
+}
+ 
+address {
+  font-style: normal;
+}
+ 
+.container {
+  width: 100%;
+  max-width: calc(var(--container-max) + (var(--gutter) * 2));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius);
+}
+ 
+/* main gets programmatic focus from the skip link; no ring needed there */
+main:focus {
+  outline: none;
+}
+ 
+
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius);
+  /* Moved off-screen until it receives keyboard focus */
+  transform: translateY(-200%);
+}
+ 
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--target-min);          /* 44px target size (WCAG 2.5.8) */
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-heading);
+  font-size: var(--text-body);
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+ 
+.button-primary {
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+}
+ 
+.button-primary:hover {
+  background: var(--color-text-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Header and navigation ---------- */
+ 
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-surface-light);
+}
+ 
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+ 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  text-decoration: none;
+}
+ 
+.logo-mark {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-primary-teal);
+  flex-shrink: 0;
+}
+ 
+.nav-toggle {
+  min-height: var(--target-min);
+  min-width: var(--target-min);
+  padding: var(--space-1) var(--space-3);
+  font: inherit;
+  font-weight: 700;
+  color: var(--color-primary-navy);
+  background: var(--color-white);
+  border: 2px solid var(--color-primary-navy);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+ 
+.primary-nav {
+  width: 100%;
+}
+ 
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.primary-nav a {
+  display: block;
+  padding: var(--space-2) 0;
+  min-height: var(--target-min);
+  font-weight: 700;
+  color: var(--color-text-dark);
+  text-decoration: none;
+}
+ 
+.primary-nav a:hover {
+  text-decoration: underline;
+}
+ 
+.site-header .button-primary {
+  width: 100%;
+}
+ 
+/* Without JavaScript the nav stays visible. With JS, it collapses on phones
+   and the Menu button toggles it (main.js adds the .js class). */
+.nav-toggle {
+  display: none;
+}
+ 
+.js .nav-toggle {
+  display: inline-flex;
+}
+ 
+.js .primary-nav,
+.js .site-header .button-primary {
+  display: none;
+}
+ 
+.js .site-header.is-open .primary-nav,
+.js .site-header.is-open .button-primary {
+  display: block;
+}
+ 
+.js .site-header.is-open .button-primary {
+  display: inline-flex;
+}
+ 
+/* Desktop header: everything on one row */
+@media (min-width: 64em) {   /* 1024px */
+  .js .nav-toggle {
+    display: none;
+  }
+ 
+  .js .primary-nav,
+  .primary-nav {
+    display: block;
+    width: auto;
+  }
+ 
+  .js .site-header .button-primary,
+  .site-header .button-primary {
+    display: inline-flex;
+    width: auto;
+  }
+ 
+  .header-inner {
+    flex-wrap: nowrap;
+    gap: var(--space-5);
+  }
+ 
+  .primary-nav ul {
+    flex-direction: row;
+    gap: var(--space-5);
+  }
+ 
+  .primary-nav a {
+    padding: var(--space-1) 0;
+    display: flex;
+    align-items: center;
+  }
+}
+ 
+/* ---------- Hero section ---------- */
+.hero {
+  background: var(--color-surface-light);
+  padding-block: var(--space-7);
+}
+ 
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+ 
+.hero-intro {
+  max-width: 40rem;            /* about 640px, comfortable line length */
+  color: var(--color-text-muted);
+  margin-top: calc(var(--space-3) - var(--space-5));
+}
+ 
+.search-card {
+  width: 100%;
+  max-width: 50rem;
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+}
+ 
+.search-card h2 {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  margin-bottom: var(--space-3);
+}
+ 
+.search-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+ 
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  min-width: 0;                /* lets fields shrink so the row fits the card */
+}
+ 
+.field input {
+  width: 100%;
+}
+ 
+.search-row .button {
+  flex-shrink: 0;
+}
+ 
+.field label {
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+  font-weight: 700;
+}
+ 
+.field input {
+  min-height: var(--target-min);
+  padding: var(--space-2) var(--space-3);
+  font: inherit;
+  color: var(--color-text-dark);
+  background: var(--color-white);
+  border: 1px solid var(--color-text-muted);   /* 6.5:1, passes 3:1 for UI */
+  border-radius: var(--radius);
+}
+ 
+.field input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 1;
+}
+ 
+/* Error state: thicker red border plus text message, never color alone */
+.field input[aria-invalid="true"] {
+  border: 2px solid var(--color-error-red);
+}
+ 
+.field-error {
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+  font-weight: 700;
+  color: var(--color-error-red);
+}
+ 
+.search-status {
+  margin-top: var(--space-3);
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+}
+ 
+.search-status:empty {
+  margin-top: 0;
+}
+ 
+@media (min-width: 48em) {   /* 768px: fields side by side */
+  .hero {
+    padding-block: var(--space-9);
+  }
+ 
+  h1 {
+    font-size: var(--text-display);
+    line-height: var(--lh-display);
+  }
+ 
+  .search-card {
+    padding: var(--space-5);
+  }
+ 
+  .search-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+ 
+  /* Line the button up with the inputs, under the labels */
+  .search-row .button {
+    margin-top: calc(var(--lh-small) + var(--space-1));
+  }
+}
+ 
+ 
+/* ---------- Emergency notice ---------- */
+ 
+.emergency-notice {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-error-red);
+  border-radius: var(--radius-card);
+  padding: var(--space-3) var(--space-4);
+}
+ 
+.emergency-notice a {
+  color: var(--color-text-dark);
+}
+ 
+ 
+/* ---------- Quick links (CSS Grid) ---------- */
+ 
+.quick-links {
+  padding-block: var(--space-7);
+}
+ 
+.quick-links h2 {
+  margin-bottom: var(--space-5);
+}
+ 
+/* Cards wrap automatically: 1 column on phones, up to 4 on desktop */
+.card-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--space-4);
+}
+ 
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-white);
+  border: 1px solid var(--color-text-muted);
+  border-radius: var(--radius-card);
+}
+ 
+.card-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-primary-teal);
+}
+ 
+.card p {
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+  color: var(--color-text-muted);
+  flex-grow: 1;                /* pushes links to the same line in every card */
+}
+ 
+.card a {
+  font-weight: 700;
+}
+ 
+ 
+/* ---------- Services ---------- */
+ 
+.services {
+  background: var(--color-surface-light);
+  padding-block: var(--space-7);
+}
+ 
+.services h2 {
+  margin-bottom: var(--space-5);
+}
+ 
+.services-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3) var(--space-4);
+}
+ 
+.services-list a {
+  display: inline-block;
+  padding-block: var(--space-1);
+  font-weight: 700;
+}
+ 
+@media (min-width: 40em) {   /* 640px */
+  .services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+@media (min-width: 64em) {   /* 1024px */
+  .quick-links,
+  .services {
+    padding-block: var(--space-9);
+  }
+ 
+  .services-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+ 
+/* ---------- Footer ---------- */
+ 
+.site-footer {
+  background: var(--color-primary-navy);
+  color: var(--color-white);
+  padding-block: var(--space-8);
+}
+ 
+.site-footer h2 {
+  /* Structurally H2, visually H3 size: levels describe structure, not size */
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+ 
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+ 
+.site-footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+ 
+.site-footer address,
+.site-footer li,
+.footer-legal {
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+}
+ 
+.site-footer a {
+  color: var(--color-white);
+}
+ 
+.footer-legal {
+  margin-top: var(--space-7);
+}
+ 
+@media (min-width: 48em) {
+  .footer-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+ 
+/* ---------- Content pages (accessibility statement) ---------- */
+ 
+.prose {
+  max-width: calc(48rem + (var(--gutter) * 2));
+  padding-block: var(--space-7);
+}
+ 
+.prose h1 {
+  margin-bottom: var(--space-2);
+}
+ 
+.prose section {
+  margin-top: var(--space-6);
+}
+ 
+.prose h2 {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  margin-bottom: var(--space-2);
+}
+ 
+.prose p + p,
+.prose ul + p,
+.prose table + p {
+  margin-top: var(--space-3);
+}
+ 
+.prose ul {
+  padding-left: var(--space-4);
+}
+ 
+.prose li + li {
+  margin-top: var(--space-1);
+}
+ 
+.meta {
+  color: var(--color-text-muted);
+  font-size: var(--text-small);
+}
+ 
+.breadcrumb {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-small);
+}
+ 
+.breadcrumb ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+ 
+/* Separator is decorative CSS, so screen readers don't read it */
+.breadcrumb li + li::before {
+  content: "/";
+  margin-right: var(--space-1);
+  color: var(--color-text-muted);
+}
+ 
+.breadcrumb [aria-current="page"] {
+  color: var(--color-text-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+ 
+/* Tables scroll inside themselves on phones instead of the whole page */
+.prose table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+}
+ 
+.prose caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: var(--space-1);
+}
+ 
+.prose th,
+.prose td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+ 
+.prose th {
+  background: var(--color-surface-light);
+}
+ 
+ 
+/* ---------- Reduced motion (WCAG 2.3.3) ---------- */
+ 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+ 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+

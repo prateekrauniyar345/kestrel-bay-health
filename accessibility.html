@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Statement | Kestrel Bay Health</title>
+  <meta name="description" content="Kestrel Bay Health's commitment to digital accessibility, the standards we follow, how we test, and how to report a barrier.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Same header as index.html (in a CMS this would be a shared template) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Kestrel Bay Health, home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">Kestrel Bay Health</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        Menu
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Find a Doctor</a></li>
+          <li><a href="index.html">Locations</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html">Patients &amp; Visitors</a></li>
+          <li><a href="index.html">About</a></li>
+        </ul>
+      </nav>
+
+      <a class="button button-primary" href="index.html">Book an appointment</a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container prose">
+
+      <!-- Breadcrumb helps orientation (WCAG 2.4.8, best practice) -->
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="accessibility.html" aria-current="page">Accessibility Statement</a></li>
+        </ol>
+      </nav>
+
+      <h1>Accessibility Statement</h1>
+      <p class="meta">Last reviewed: <time datetime="2026-11-12">November 12, 2026</time></p>
+
+      <section aria-labelledby="commitment">
+        <h2 id="commitment">Our commitment</h2>
+        <p>
+          Kestrel Bay Health wants everyone to be able to find care, book visits, and manage
+          their health online, including people who use screen readers, keyboards, voice
+          control, magnification, or other assistive technology.
+        </p>
+      </section>
+
+      <section aria-labelledby="standard">
+        <h2 id="standard">Conformance target</h2>
+        <p>
+          This website aims to conform to the
+          <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a>
+          at <strong>Level AA</strong>.
+        </p>
+      </section>
+
+      <section aria-labelledby="measures">
+        <h2 id="measures">What we have done</h2>
+        <ul>
+          <li>Built with semantic HTML landmarks (header, navigation, main, footer) and a logical heading structure.</li>
+          <li>Added a "Skip to main content" link as the first item on every page.</li>
+          <li>Made every feature usable with a keyboard, with a visible focus indicator on all links, buttons, and form fields.</li>
+          <li>Checked that all text meets a contrast ratio of at least 4.5:1.</li>
+          <li>Underlined links so they do not rely on color alone.</li>
+          <li>Gave every form field a visible label, and linked error messages to their fields.</li>
+          <li>Made buttons and form fields at least 44 pixels tall.</li>
+          <li>Made pages work at 320 pixels wide and at 200% zoom without horizontal scrolling.</li>
+          <li>Respected the "reduce motion" setting in your operating system.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="testing">
+        <h2 id="testing">How we test</h2>
+        <table>
+          <caption>Accessibility testing methods and results</caption>
+          <thead>
+            <tr>
+              <th scope="col">Method</th>
+              <th scope="col">Tool</th>
+              <th scope="col">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Automated scan</td>
+              <td>axe DevTools</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Automated scan</td>
+              <td>WAVE</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Accessibility score</td>
+              <td>Chrome Lighthouse</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Keyboard-only navigation</td>
+              <td>Manual testing</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Screen reader</td>
+              <td>NVDA (Windows), VoiceOver (macOS)</td>
+              <td>TBD</td>
+            </tr>
+            <tr>
+              <td>Zoom and reflow</td>
+              <td>200% zoom, 320px viewport</td>
+              <td>TBD</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          See the <a href="audit.html">audit case study</a> for the issues we found and how we fixed them.
+        </p>
+      </section>
+
+      <section aria-labelledby="limitations">
+        <h2 id="limitations">Known limitations</h2>
+        <ul>
+          <li>This is a demonstration site. Links other than the Accessibility Statement do not lead to real pages.</li>
+          <li>The provider search shows example validation only and does not return real results.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="feedback">
+        <h2 id="feedback">Report a barrier</h2>
+        <p>
+          If something on this site does not work for you, please tell us. Include the page
+          address and a short description of the problem.
+        </p>
+        <ul>
+          <li>Phone: <a href="tel:+15550100199">(555) 010-0199</a></li>
+          <li>Email: <a href="mailto:accessibility@kestrelbay.example">accessibility@kestrelbay.example</a></li>
+        </ul>
+        <p>We aim to respond within 5 business days.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <section aria-labelledby="footer-contact">
+          <h2 id="footer-contact">Contact</h2>
+          <address>
+            Kestrel Bay Health<br>
+            100 Harbor Road, Kestrel Bay<br>
+            <a href="tel:+15550100199">(555) 010-0199</a>
+          </address>
+        </section>
+
+        <nav aria-labelledby="footer-patients">
+          <h2 id="footer-patients">Patients</h2>
+          <ul>
+            <li><a href="index.html">Find a Doctor</a></li>
+            <li><a href="index.html">Locations</a></li>
+            <li><a href="index.html">Pay a Bill</a></li>
+            <li><a href="index.html">Patient Portal</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-policies">
+          <h2 id="footer-policies">Policies</h2>
+          <ul>
+            <li><a href="accessibility.html" aria-current="page">Accessibility Statement</a></li>
+            <li><a href="#">Privacy Notice</a></li>
+            <li><a href="#">Non-Discrimination Notice</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <p class="footer-legal">
+        © 2026 Kestrel Bay Health. Fictional organization created as a portfolio demo.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
