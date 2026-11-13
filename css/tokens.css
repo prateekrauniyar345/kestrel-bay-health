@@ -1,0 +1,65 @@
+/* ==========================================================================
+   Kestrel Bay Health: Design tokens
+   Mirrors the Figma style tile. Change a value here and it updates everywhere.
+   Contrast ratios are measured against white (#FFFFFF).
+   ========================================================================== */
+
+:root {
+  /* ---------- Colors ---------- */
+  --color-primary-navy: #0B3D5C;   /* 11.4:1  header text, buttons, footer */
+  --color-primary-teal: #0F7C7A;   /*  5.0:1  links, accents */
+  --color-text-dark:    #1F2933;   /* 14.8:1  body text */
+  --color-text-muted:   #52606D;   /*  6.5:1  secondary text */
+  --color-surface-light:#F2F6F9;   /*  section backgrounds */
+  --color-focus-amber:  #D97706;   /*  3.2:1  focus ring (non-text, needs 3:1) */
+  --color-error-red:    #B42318;   /*  6.6:1  form errors, emergency bar */
+  --color-white:        #FFFFFF;
+
+  /* ---------- Typography ---------- */
+  --font-heading: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+
+  /* size / line-height pairs from the Figma text styles */
+  --text-display: 3rem;      /* 48px */
+  --lh-display:   3.5rem;    /* 56px */
+  --text-h1:      2.5rem;    /* 40px */
+  --lh-h1:        3rem;      /* 48px */
+  --text-h2:      2rem;      /* 32px */
+  --lh-h2:        2.5rem;    /* 40px */
+  --text-h3:      1.5rem;    /* 24px */
+  --lh-h3:        2rem;      /* 32px */
+  --text-body:    1.125rem;  /* 18px */
+  --lh-body:      1.75rem;   /* 28px */
+  --text-small:   1rem;      /* 16px */
+  --lh-small:     1.5rem;    /* 24px */
+
+  /* ---------- Spacing (8px scale) ---------- */
+  --space-1: 0.5rem;   /*  8px */
+  --space-2: 0.75rem;  /* 12px */
+  --space-3: 1rem;     /* 16px */
+  --space-4: 1.5rem;   /* 24px */
+  --space-5: 2rem;     /* 32px */
+  --space-6: 2.5rem;   /* 40px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-9: 5rem;     /* 80px */
+
+  /* ---------- Layout ---------- */
+  --container-max: 75rem;      /* 1200px content width */
+  --gutter: 1rem;              /* 16px side padding on phones */
+  --radius: 0.375rem;          /* 6px buttons and inputs */
+  --radius-card: 0.5rem;       /* 8px cards */
+  --header-height: 5rem;       /* used for scroll-padding with sticky header */
+
+  /* ---------- Interaction ---------- */
+  --target-min: 2.75rem;       /* 44px minimum height for buttons and inputs */
+
+  /* Double focus ring: 2px white inner + 3px amber outer (WCAG 2.4.7, 1.4.11) */
+  --focus-ring: 0 0 0 2px var(--color-white), 0 0 0 5px var(--color-focus-amber);
+}
+
+@media (min-width: 48em) {      /* 768px and up */
+  :root {
+    --gutter: 2rem;
+  }
+}

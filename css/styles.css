@@ -1,0 +1,62 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    /* Set scroll padding for sticky header */
+    scroll-padding-top : calc(var(--header-height) + var(--space-3));
+    /* Prevent font size adjustments on mobile devices */
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Base styles for body, headings, paragraphs, and lists */
+body {
+    margin : 0px; 
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+    color: var(--color-text-dark);
+    background-color: var(--color-white);
+}
+
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700; 
+    color : var(--color-text-dark);
+    margin : 0px; 
+}
+
+/* Display size on large screens, H1 size on phones so it doesn't overflow */
+h1 {
+  font-size: var(--text-h1);
+  line-height: var(--lh-h1);
+}
+ 
+h2 {
+  font-size: var(--text-h2);
+  line-height: var(--lh-h2);
+}
+ 
+h3 {
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+}
+ 
+p {
+  margin: 0;
+}
+ 
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+ 
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
